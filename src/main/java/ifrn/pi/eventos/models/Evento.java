@@ -9,9 +9,14 @@ import jakarta.persistence.Id;
 public class Evento {
 
 	@Id
-
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@Override
+	public String toString() {
+		return "Evento [id=" + id + ", nome=" + nome + ", local=" + local + ", data=" + data + ", horario=" + horario
+				+ "]";
+	}
+
 	private String nome;
 	private String local;
 	private String data;
