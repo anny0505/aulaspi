@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Eventos</title>
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+	<div th:replace="~{menu :: menu}"></div>
+	<div class="container">
+		<h1>Lista de Eventos</h1>
+		
+		<table>
+		
+		<thead>
+		<tr>
+		<th>Id</th>
+		<th>Nome</th>
+		<th>Local</th>
+		<th>Data</th>
+		<th>Horário</th>
+		</tr>
+		</thead>
+		<tbody>
+		
+		<tr th:each="e : ${eventos}">
+        <td th:text="${e.id}">1</td>
+        <td th:text="${e.nome}">Falecimento</td>
+        <td th:text="${e.local}">Clube</td>
+        <td th:text="${e.data}">12/12/2026</td>
+        <td th:text="${e.horario}">19:00</td>
+      </tr>
+		</tbody>
+		</table>
+	</div>
+</body>
+</html>
