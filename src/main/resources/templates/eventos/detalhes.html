@@ -6,6 +6,7 @@
 <!-- Compiled and minified CSS -->
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 	<div th:replace="~{menu :: menu}"></div>
@@ -58,6 +59,7 @@
     <th>ID</th>
     <th>Nome</th>
     <th>RG</th>
+    <th></th>
   </tr>
   </thead>
   
@@ -66,6 +68,10 @@
     <td th:text="${c.id}">1</td>
      <td th:text="${c.nome}">Anny Freire</td>
       <td th:text="${c.rg}">123</td>
+    <td><a th:href="@{/eventos/{idEvento}/remover/convidados/{idConvidado}(idEvento=${evento.id}, idConvidado=${c.id})}">
+        <i class="material-icons">delete</i></a></td>
+
+      
    </tr>
    </tbody>
 </table>
