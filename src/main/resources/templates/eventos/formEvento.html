@@ -13,18 +13,21 @@
 		<h1>Adicionar Evento</h1>
 
 		<form action="/eventos" method="post">
-
-			<div>
-				<label>Nome: </label> <input type="text" name="nome">
+		
+		    <div>
+			 <input type="hidden" name="id" th:value="${evento.id}" readonly>
 			</div>
 			<div>
-				<label>Local: </label> <input type="text" name="local">
+				<label>Nome: </label> <input type="text" name="nome" th:value="${evento.nome}">
 			</div>
 			<div>
-				<label>Data: </label> <input type="text" name="data">
+				<label>Local: </label> <input type="text" name="local" th:value="${evento.local}">
 			</div>
 			<div>
-				<label>Horário: </label> <input type="text" name="horario">
+				<label>Data: </label> <input type="text" name="data" th:value="${evento.data}">
+			</div>
+			<div>
+				<label>Horário: </label> <input type="text" name="horario" th:value="${evento.horario}">
 			</div>
 			<div>
 				<button class="btn waves-effect waves-light" type="submit">Salvar</button>
